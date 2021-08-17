@@ -35,6 +35,7 @@ export const ButtonsDiv = styled.div`
   justify-content: center;
   align-items: center;
   margin: 15px 0px;
+  padding: 0px;
   @media (min-width: 768px) {
     flex-wrap: nowrap;
   }

@@ -25,7 +25,7 @@ class GradientGenerator extends Component {
     selectedGradientDirection: gradientDirectionsList[0].value,
     selectedColor1: '#8ae323',
     selectedColor2: '#014f7b',
-    activeButton: gradientDirectionsList[0].directionId,
+    activeButton: gradientDirectionsList[0].value,
     direction: gradientDirectionsList[0].value,
     inputColor1: '#8ae323',
     inputColor2: '#014f7b',
@@ -67,17 +67,18 @@ class GradientGenerator extends Component {
 
     // console.log(inputColor1, inputColor2, direction)
 
-    console.log(selectedColor1, selectedColor2, selectedGradientDirection)
+    // console.log(selectedColor1, selectedColor2, selectedGradientDirection)
 
     return (
       <AppDiv
+        data-testid="gradientGenerator"
         direction={selectedGradientDirection}
         color1={selectedColor1}
         color2={selectedColor2}
       >
         <Heading>Generate a CSS Color Gradient</Heading>
         <DirectionTitle as="p">Choose Direction</DirectionTitle>
-        <ButtonsDiv>
+        <ButtonsDiv as="ul">
           {gradientDirectionsList.map(item => (
             <GradientDirectionItem
               buttonData={item}
@@ -87,11 +88,11 @@ class GradientGenerator extends Component {
             />
           ))}
         </ButtonsDiv>
-        <DirectionTitle>Pick the Colors</DirectionTitle>
+        <DirectionTitle as="p">Pick the Colors</DirectionTitle>
         <FormDiv as="form" onSubmit={this.generateGradientColor}>
           <InputDiv>
             <InputLabelDiv>
-              <Label type="color" htmlFor="color1">
+              <Label type="color" as="p">
                 {inputColor1}
               </Label>
               <InputColor
@@ -102,7 +103,7 @@ class GradientGenerator extends Component {
               />
             </InputLabelDiv>
             <InputLabelDiv>
-              <Label type="color" htmlFor="color2">
+              <Label type="color" as="p">
                 {inputColor2}
               </Label>
               <InputColor
