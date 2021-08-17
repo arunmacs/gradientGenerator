@@ -60,14 +60,9 @@ class GradientGenerator extends Component {
       selectedColor1,
       selectedColor2,
       activeButton,
-      direction,
       inputColor1,
       inputColor2,
     } = this.state
-
-    // console.log(inputColor1, inputColor2, direction)
-
-    // console.log(selectedColor1, selectedColor2, selectedGradientDirection)
 
     return (
       <AppDiv

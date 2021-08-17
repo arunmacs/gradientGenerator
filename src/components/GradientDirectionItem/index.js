@@ -5,7 +5,6 @@ const GradientDirectionItem = props => {
   const {value, displayText} = buttonData
 
   const active = activeButton === value
-  console.log(active, activeButton)
 
   const selectDirection = () => {
     changeDirection(value)
@@ -13,7 +12,7 @@ const GradientDirectionItem = props => {
 
   return (
     <ListItem>
-      <Button value={value} active onClick={selectDirection}>
+      <Button value={value} active={active} onClick={selectDirection}>
         {displayText}
       </Button>
     </ListItem>
